@@ -3,15 +3,15 @@
   <div class="container-fluid font">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{url('/principal')}}">Painel de Controle</a>
+            <a href="#">Painel de Controle</a>
           </li>
           <li class="breadcrumb-item active">Registro</li>
           <li class="breadcrumb-item active">Item</li>
+          <li class="breadcrumb-item active">Listagem</li>
         </ol>
-      
-      <div class="row">
-          <div class="col-lg-12 col-md-12">
-              @if(session()->has('msg'))
+      <div class="row full">
+            <div class="col-lg-12 col-md-12">
+                @if(session()->has('msg'))
                 @if(session()->has('msg') == 1)
                 <div class="alert alert-success" id="alert">
                      Registro cadastrado com sucesso.
@@ -28,22 +28,8 @@
                 </div>
                 @endif
               @endif
-            <div class="col-lg-12 col-md-12">
-              <form action="{{url('/item/form_item')}}" method="post" >
-                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                <div class="form-group">
-                  <label for="nome">Nome do Material:</label>
-                  <input type="text" class="form-control" id="item" name="item" placeholder="Ex: 1">
-                </div>                
-                <button type="submit" class="btn btn-success">Cadastrar</button>
-              </form>
-            </div>
-          </div>
-      </div>
-      <div class="row full">
-            <div class="col-lg-12 col-md-12">
                 <div class="col-lg-12 col-md-12 full-recentes"> 
-                    <span>Registros Recentemente</span>
+                    <span>Itens Registradas</span>
                 </div>
             </div>
       </div>
@@ -56,27 +42,27 @@
                       <thead>
                         <tr>
                           <th>NOME DO MATERIAL</th>
+                          <th>AÇÕES</th>
                         </tr>
                       </thead>
                       <tbody>
                        @forelse($item as $i)
                         <tr>
                           <td>{{$i->name}}</td>
+                          <td><a href="{{url('/item/item-config/editar-item')}}/{{$i->id}}" class="btn btn-info btn-sm" title="EDITAR"><i class="fa fa-pencil"></i></a>&nbsp;<a href="{{url('/item/item-config/delete-item')}}/{{$i->id}}" class="btn btn-danger btn-sm" title="INATIVA"><i class="fa fa-trash-o"></i></a></td>
                         </tr>
-                       @empty
+                        @empty
                        <tr><td>Nenhum registro cadastrado.</td></tr>
                        @endforelse
                       </tbody>
                     </table>
+                      {{ $item->links() }}
                   </div>
                 </div>
                 <div class="card-footer small text-muted">Nova Atualização {{date('Y')}}</div>
               </div>
           </div>
       </div>
-      <a href="{{url('/item/item-config')}}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i> Visualizar todos registros</a>
+      <a href="{{url('/item')}}" class="btn btn-warning btn-sm"><i class="fa fa-arrow-circle-o-left"></i> Voltar</a>
   </div>
-  @endsection
-  @section('js')
-  
   @endsection

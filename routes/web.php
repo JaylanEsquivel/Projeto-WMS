@@ -31,8 +31,14 @@ Route::get('/bloco/bloco-config', 'ViewController@view_config_bloco')->name('Con
 Route::get('/repositorio', 'ViewController@view_registra_repositorio')->name('Registro-de-repositorio');
 Route::get('/repositorio/repositorio-config', 'ViewController@view_config_repositorio')->name('Config-de-repositorio');
 */
-Route::get('/item', 'ViewController@view_registra_item')->name('Registro-de-item');
-Route::get('/item/item-config', 'ViewController@view_config_item')->name('Config-de-item');
+Route::get('/item', 'ItemController@item_registrar')->name('Registro-de-item');
+Route::get('/item/item-config', 'ItemController@item_listar')->name('Config-de-item');
+Route::post('/item/form_item', 'ItemController@cadastro_item');
+Route::get('/item/item-config/delete-item/{id}', 'ItemController@item_deletar')->name('Deletar-de-item');
+Route::get('/item/item-config/editar-item/{id}', 'ItemController@item_editar')->name('Editar-de-Area');
+Route::post('/item/item-config/editar-item/update/{id}', 'ItemController@alterar_item');
+
+
 
 Route::get('/usuarios', 'ViewController@view_registra_usuarios')->name('Registro-de-usuarios');
 Route::get('/usuarios/usuarios-config', 'ViewController@view_config_usuarios')->name('Config-de-usuarios');
