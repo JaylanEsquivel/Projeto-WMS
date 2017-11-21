@@ -1,0 +1,33 @@
+/* 
+    Created on : 07/11/2017, 20:22:57
+    Author     : cisco
+*/
+
+.admin{
+    padding-top: 5px;
+    text-align: center;
+}
+.text{
+    color: #8dbfe3;
+}
+.text-two{
+    font-size: 12px;
+    color: #8dbfe3;
+}
+.font{
+    padding-bottom: 200px;
+}
+.full{
+    margin-top: 30px;
+}
+.full-recentes{
+    background-color: #a1d6fc;
+        border-radius: .25rem;
+        color: #fff;
+}
+a{
+    text-decoration: none;
+}
+#alert,#alert1{
+    display: block;
+}
