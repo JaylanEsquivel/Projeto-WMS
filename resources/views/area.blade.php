@@ -1,5 +1,13 @@
-@extends('principal')
-  @section('view')
+@if( Auth::user()->tipo == "a" )
+ @extends('layouts.admin')
+@if( Auth::user()->tipo == "b" )
+  @extends('layouts.coordenador')
+@if( Auth::user()->tipo == "c" )
+  @extends('layouts.coordenador_area')
+@else
+  @extends('layouts.comun')
+@endif
+@section('view')
   <div class="container-fluid font">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">

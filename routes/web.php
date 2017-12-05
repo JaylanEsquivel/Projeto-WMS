@@ -84,4 +84,12 @@ Route::get('/relatorio-saida','ViewController@view_relatorio_saida')->name('Rela
 Route::get('/relatorio-item','ViewController@view_relatorio_item')->name('Relatorio_item');
 
 // ROTAS DE RELÁTORIOS 
+
+// ROTAS DE TESTE DE PERFIL DE USUARIO
+
+Route::get('/adm','ViewController@view_teste')->name('Visualizar teste de Menu ADM');
+Route::get('/cor','ViewController@view_teste_')->name('Visualizar teste de Menu ADM');
+Route::get('/cora','ViewController@view_teste__')->name('Visualizar teste de Menu ADM');
+Route::get('/comun','ViewController@view_teste___')->name('Visualizar teste de Menu ADM');
+
 Auth::routes();

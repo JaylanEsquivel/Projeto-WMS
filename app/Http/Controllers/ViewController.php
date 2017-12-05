@@ -118,5 +118,18 @@ class ViewController extends Controller {
     
     // inventario
 
-    
+    // testes de view
+     public function view_teste() {
+        return view('layouts/admin');
+    }
+    public function view_teste_() {
+        return view('layouts/coordenador');
+    }
+    public function view_teste__() {
+        return view('layouts/coordenador_area');
+    }
+    public function view_teste___() {
+        return view('layouts/comun');
+    }
+    // testes de view
 }
